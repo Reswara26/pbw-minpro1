@@ -37,11 +37,17 @@ portfolio/
 ## 📸 Tampilan Setiap Section / Fitur
 
 ### 1. Navbar
+
+<img width="1876" height="91" alt="image" src="https://github.com/user-attachments/assets/d07febc1-ee04-45ec-8927-4feef003a946" />
+
 Navbar fixed di bagian atas halaman. Berisi logo inisial **RG.**, tautan navigasi ke tiap section (Home, About Me, Certificates), dan tombol **View Work**. Di layar kecil (mobile), navbar akan berubah menjadi burger menu yang bisa di-toggle.
 
 ---
 
 ### 2. Section Home (Hero Section)
+
+<img width="1880" height="770" alt="image" src="https://github.com/user-attachments/assets/c210ed73-fb7b-406d-93c7-d9e616eee88d" />
+
 Halaman pertama yang muncul saat website dibuka. Berisi:
 - Teks sapaan **"Hello, my name is"**
 - Nama lengkap **Reswara Ganendra Rashi Dewa** dalam huruf besar
@@ -54,6 +60,9 @@ Halaman pertama yang muncul saat website dibuka. Berisi:
 ---
 
 ### 3. Section About Me
+
+<img width="1869" height="747" alt="image" src="https://github.com/user-attachments/assets/4f327333-28ab-4f68-8779-53ffef57d82a" />
+
 Berisi informasi tentang diri, terbagi menjadi dua kolom:
 
 **Kolom Kiri:**
@@ -68,6 +77,9 @@ Berisi informasi tentang diri, terbagi menjadi dua kolom:
 ---
 
 ### 4. Section Certificates
+
+<img width="1880" height="784" alt="image" src="https://github.com/user-attachments/assets/e1e42666-0496-420e-90fe-06c1ecdc8b92" />
+
 Menampilkan 3 kartu sertifikat dalam layout grid. Setiap kartu berisi:
 - Foto sertifikat
 - Label "Certificate"
@@ -77,6 +89,9 @@ Menampilkan 3 kartu sertifikat dalam layout grid. Setiap kartu berisi:
 ---
 
 ### 5. Footer
+
+<img width="1879" height="228" alt="image" src="https://github.com/user-attachments/assets/1ec95497-a70b-4ae6-9c25-7b230355c0d0" />
+
 Bagian paling bawah halaman. Berisi logo inisial, nama lengkap, dan teks hak cipta.
 
 ---
