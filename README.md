@@ -352,5 +352,3 @@ CSS Custom Properties (variabel) digunakan agar warna dan font konsisten di selu
 - **Navbar:** Fixed dengan efek blur glassmorphism, burger menu otomatis di mobile
 
 ---
-
-*Dibuat untuk memenuhi tugas Mini Project 1 — Mata Kuliah Pemrograman Berbasis Web*
