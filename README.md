@@ -3,7 +3,7 @@
 > Mini Project 1 — Pemrograman Berbasis Web  
 > 2409116100 — Kelas C 2024
 
-## Link Website Portofolio: https://reswara26.github.io/pbw-minpro1/
+### Link Website Portofolio: https://reswara26.github.io/pbw-minpro1/
 ---
 
 ## 🛠️ Teknologi yang Digunakan
