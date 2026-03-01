@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reswara Ganendra — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+      <div class="container-fluid px-4 px-lg-5">
+
+        <div class="nav-logo">{{ logo }}<span class="accent">.</span></div>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto gap-lg-4">
+            <li class="nav-item" v-for="link in navLinks" :key="link.href">
+              <a class="nav-link custom-nav-link" :href="link.href">{{ link.label }}</a>
+            </li>
+          </ul>
+          <div class="ms-lg-3 mt-3 mt-lg-0">
+            <a href="#certificates" class="btn btn-warning fw-bold text-dark">View Work ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+    <section id="home" class="hero">
+      <div class="hero-bg-text">PORTFOLIO</div>
+
+      <div class="container-fluid px-4 px-lg-5">
+        <div class="row align-items-center hero-row g-5">
+
+          <div class="col-12 col-lg-7">
+            <p class="hero-greeting">Hello, my name is</p>
+            <h1 class="hero-name">
+              <span v-for="(line, i) in nameParts" :key="i">
+                <span :class="{ accent: i === nameParts.length - 1 }">{{ line }}</span><br />
+              </span>
+            </h1>
+            <p class="hero-sub" style="white-space: pre-line;">{{ subtitle }}</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <span class="custom-badge" v-for="badge in badges" :key="badge">{{ badge }}</span>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5 d-flex justify-content-center justify-content-lg-end">
+            <div class="hero-photo-wrap">
+              <div class="photo-frame">
+                <img :src="profilePhoto" alt="Foto Reswara Ganendra" class="profile-img" />
+                <div class="photo-placeholder">
+                  <div class="placeholder-icon">👤</div>
+                </div>
+              </div>
+              <div class="photo-deco deco-1"></div>
+              <div class="photo-deco deco-2"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container-fluid px-4 px-lg-5">
+
+        <div class="section-label">02 — About Me</div>
+
+        <div class="row g-5 mt-1">
+
+          <div class="col-12 col-lg-6">
+            <h2 class="section-title">Who Am <span class="accent">I?</span></h2>
+            <p class="about-desc" v-for="(para, i) in aboutParagraphs" :key="i">{{ para }}</p>
+
+            <div class="d-flex flex-column gap-3 mt-4">
+              <div class="exp-card d-flex align-items-start gap-3 p-3" v-for="exp in experiences" :key="exp.title">
+                <div class="exp-icon">{{ exp.icon }}</div>
+                <div>
+                  <div class="exp-title">{{ exp.title }}</div>
+                  <div class="exp-org">{{ exp.org }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <h3 class="skills-title">Skills</h3>
+            <div class="d-flex flex-column gap-4">
+              <div class="skill-item" v-for="skill in skills" :key="skill.name">
+                <div class="skill-header d-flex justify-content-between mb-2">
+                  <span>{{ skill.name }}</span>
+                  <span class="skill-pct">{{ skill.pct }}%</span>
+                </div>
+                <div class="progress custom-progress" style="height: 6px;">
+                  <div
+                    class="progress-bar custom-progress-bar"
+                    role="progressbar"
+                    :style="{ width: skill.pct + '%' }"
+                    :aria-valuenow="skill.pct"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="certificates">
+      <div class="container-fluid px-4 px-lg-5">
+
+        <div class="section-label">03 — Certificates</div>
+        <h2 class="section-title">My <span class="accent">Certificates</span></h2>
+        <p class="cert-intro">{{ certIntro }}</p>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4" v-for="cert in certificates" :key="cert.title">
+            <div class="cert-card h-100">
+              <div class="cert-img-wrap">
+                <img :src="cert.img" :alt="cert.title" class="cert-img" />
+                <div class="cert-img-placeholder">📜 {{ cert.title }}</div>
+              </div>
+              <div class="cert-info p-3">
+                <span class="cert-tag">Certificate</span>
+                <h4 class="cert-title mt-2">{{ cert.title }}</h4>
+                <p class="cert-issuer">{{ cert.issuer }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="text-center footer-top">
+        <div class="footer-logo">{{ logo }}<span class="accent">.</span></div>
+        <p>{{ fullName }} — Sistem Informasi 2024</p>
+      </div>
+      <div class="footer-divider my-3"></div>
+      <p class="footer-copy text-center">© 2026 {{ fullName }}. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          logo:         'RG',
+          fullName:     'Reswara Ganendra Rashi Dewa',
+          nameParts:    ['Reswara', 'Ganendra', 'Rashi Dewa'],
+          subtitle:     'Mahasiswa Sistem Informasi\nFakultas Teknik Universitas Mulawarman\nAngkatan 2024',
+          profilePhoto: 'images/dewa.jpeg',
+
+          navLinks: [
+            { href: '#home',         label: 'Home'         },
+            { href: '#about',        label: 'About Me'     },
+            { href: '#certificates', label: 'Certificates' },
+          ],
+
+          badges: ['Web Dev', 'Database', 'UI/UX'],
+
+          aboutParagraphs: [
+            'Saya adalah mahasiswa Sistem Informasi Fakultas Teknik Universitas Mulawarman angkatan 2024 dengan minat besar pada pengembangan web dan database. Saya terbiasa bekerja menggunakan HTML, CSS, dan JavaScript, serta memahami cara membangun dan mengelola sistem dengan MySQL.',
+            'Di luar kegiatan akademik, saya aktif berorganisasi. Saya pernah menjadi penanggung jawab di Rohani Islam (ROHIS) dan anggota Departemen Entrepreneurship Development di Information System Association (INFORSA). Peran tersebut mendorong saya untuk terus berkembang sekaligus berkontribusi nyata dalam mendukung pengembangan kemampuan rekan-rekan di organisasi.',
+          ],
+
+          experiences: [
+            { icon: '🕌', title: 'Penanggung Jawab',              org: 'ROHIS — Rohani Islam' },
+            { icon: '💼', title: 'Anggota Dept. Entrepreneurship', org: 'INFORSA — Information System Association' },
+          ],
+
+          skills: [
+            { name: 'MySQL & Database', pct: 80 },
+            { name: 'HTML & CSS',       pct: 75 },
+            { name: 'Computer',         pct: 85 },
+            { name: 'Teamwork',         pct: 90 },
+            { name: 'Leadership',       pct: 70 },
+          ],
+
+          certIntro: 'Kumpulan sertifikat yang telah saya raih selama perjalanan belajar.',
+          certificates: [
+            {
+              img:    'images/sertif_1.png',
+              title:  'Surat Kepengurusan INFORSA',
+              issuer: 'Tercatat sebagai Anggota Biro Entrepreneurship Development pada kepengurusan INFORSA Fakultas Teknik Universitas Mulawarman periode 19 Februari–31 Desember 2025.',
+            },
+            {
+              img:    'images/sertif_2.png',
+              title:  'Surat Anggota Divisi Perlengkapan & Konsumsi - UPGRADING',
+              issuer: 'Tercatat sebagai Anggota Tim Perlengkapan dalam kegiatan Upgrading Kepengurusan Kabinet Cakrawira Fakultas Teknik Universitas Mulawarman tahun 2025.',
+            },
+            {
+              img:    'images/Sertif_3.png',
+              title:  'Surat Anggota Divisi Konsumsi - MAKRAB',
+              issuer: 'Tercatat sebagai Anggota Tim Konsumsi pada kegiatan TAROT 24 yang diselenggarakan oleh INFORSA Fakultas Teknik Universitas Mulawarman pada 13 Desember 2024.',
+            },
+          ],
+        };
+      },
+    }).mount('#app');
+  </script>
+
+</body>
+</html>
