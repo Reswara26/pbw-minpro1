@@ -1,7 +1,7 @@
-# 🌐 Website Portfolio — Reswara Ganendra Rashi Dewa
+# Portfolio — Reswara Ganendra Rashi Dewa
 
 > Mini Project 1 — Pemrograman Berbasis Web  
-> Sistem Informasi, Fakultas Teknik, Universitas Mulawarman — Angkatan 2024
+> 2409116100 — Kelas C 2024
 
 ---
 
